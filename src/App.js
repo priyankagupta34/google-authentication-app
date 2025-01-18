@@ -44,12 +44,17 @@ const App = () => {
       window.google.accounts.id.prompt(); // This will show the One Tap login screen again
     });
   };
-
+  const loginButton = () => {
+    window.google.accounts.id.prompt();
+  };
   return (
     <div>
       {!user ? (
-        <div className="login">
+        <div className="loginInApp">
           <h2>Login with Google to enter the app!</h2>
+          <button type="button" onClick={loginButton}>
+            Login
+          </button>
         </div>
       ) : (
         <nav className="menu">
