@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
-import { useGoogleLogin } from "@react-oauth/google";
+import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 
 const App = () => {
-  // const clientId = "YOUR_GOOGLE_CLIENT_ID";
-
-  // Initialize One Tap Login
   const login = useGoogleLogin({
     onSuccess: (credentialResponse) => {
       const token = credentialResponse.credential;
@@ -22,11 +19,24 @@ const App = () => {
     // Show the One Tap Login prompt
     login();
   }, [login]);
+  const handleLoginSuccess = (credentialResponse) => {
+    console.log("Login Success:", credentialResponse);
+  };
+
+  const handleLoginFailure = () => {
+    console.error("Login Failed");
+  };
 
   return (
     <div>
-      <h1>Google One Tap Login</h1>
-      <p>You should see a One Tap Login prompt.</p>
+      <h1>Login with Google</h1>
+      <GoogleLogin
+        onSuccess={handleLoginSuccess}
+        onError={handleLoginFailure}
+        size="large"
+        useOneTap
+        width={200}
+      />
     </div>
   );
 };
