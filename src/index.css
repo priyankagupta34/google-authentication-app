@@ -48,9 +48,9 @@ button:hover {
 .login {
   display: flex;
   justify-content: center;
-  height: 60vh;
+  height: 30vh;
   align-items: center;
-
+  padding: 0 5vw;
 
 }
 
@@ -59,4 +59,5 @@ button:hover {
   background-repeat: repeat;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
