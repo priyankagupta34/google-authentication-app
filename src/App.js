@@ -33,6 +33,7 @@ const App = () => {
   useGoogleOneTapLogin({
     onSuccess: handleLoginSuccess,
     onError: handleLoginFailure,
+    cancel_on_tap_outside: true,
   });
 
   const handleLogout = () => {
