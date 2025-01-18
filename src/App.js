@@ -48,7 +48,9 @@ const App = () => {
   return (
     <div>
       {!user ? (
-        <h1>Login with Google</h1>
+        <div className="login">
+          <h2>Login with Google to enter the app!</h2>
+        </div>
       ) : (
         <nav className="menu">
           <div className="flex">
